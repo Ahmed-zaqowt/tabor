@@ -278,7 +278,6 @@
             }
         </style>
     @endsection
-
 @section('content')
     <div class="container">
         <div class="content-body pt-5 px-3">

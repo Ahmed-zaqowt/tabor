@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'providers.main.index');
+Route::view('/ad', 'auth.auth');
+Route::get('a',function (){
+ return   Hash::make(123456789);
+});
+Route::get('admin/profile',function (){
+    return  auth('admin')->user();
+});Route::get('user/profile',function (){
+    return auth('user')->user();
+});
