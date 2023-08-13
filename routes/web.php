@@ -21,6 +21,10 @@ Route::get('a',function (){
 });
 Route::get('admin/profile',function (){
     return  auth('admin')->user();
-});Route::get('user/profile',function (){
+});
+Route::get('user/profile',function (){
     return auth('user')->user();
+});
+Route::get('employees/profile',function (){
+    return auth('employee')->user();
 });

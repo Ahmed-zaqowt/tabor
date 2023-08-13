@@ -40,6 +40,13 @@ class FortifyServiceProvider extends ServiceProvider
             Config::set('fortify.username','phone');
             Config::set('fortify.email','phone');
         }
+        elseif ($request->is('employee/*')){
+            Config::set('fortify.guard','employee');
+            Config::set('fortify.passwords','employees');
+            Config::set('fortify.prefix','employee');
+            Config::set('fortify.username','phone');
+            Config::set('fortify.email','phone');
+        }
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
             public function toResponse($request)
             {
@@ -47,6 +54,8 @@ class FortifyServiceProvider extends ServiceProvider
                     return redirect()->intended('user/profile');
                 }elseif ($request->is('admin/*')) {
                     return redirect()->intended('admin/profile');
+                }elseif ($request->is('employee/*')) {
+                    return redirect()->intended('employees/profile');
                 }
             }
         });
@@ -58,6 +67,8 @@ class FortifyServiceProvider extends ServiceProvider
 
                 }elseif ($request->is('admin/*')) {
                     return redirect()->intended('/admin/auth');
+                }elseif ($request->is('admin/*')) {
+                    return redirect()->intended('/employee/auth');
                 }
             }
         });
