@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('uploads', function (Blueprint $table) {
             $table->uuid()->primary();
-            $table->string('phone');
-            $table->text('password');
-            $table->foreignUuid('salon_uuid');
+            $table->string('filename');
+            $table->string('imageable_id');
+            $table->string('imageable_type');
+            $table->enum('type',[1,2])->nullable();
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('uploads');
     }
 };

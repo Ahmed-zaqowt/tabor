@@ -567,7 +567,7 @@
         <div class="col-lg-2 p-0 aside bg-white">
             <aside class="bg-white text-center col-lg-12 p-3">
                 <div class="logo mr-5 mb-5">
-                   
+
                     <a href="">
                         <img id="logo" src="../images/1234567.png" alt="">
                     </a>
@@ -962,7 +962,7 @@
                             <div class="d-flex justify-content-between align-items-center flex-column">
                                 <div class="left d-flex justify-content-between align-items-center coll__">
                                     <div class="d-flex justify-content-between align-items-center coll_ coll_- mr-5">
-                                        <input type="text" placeholder="service title" class="mx-2">                                      
+                                        <input type="text" placeholder="service title" class="mx-2">
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center coll_">
                                         <input type="text" placeholder="cost" class="mx-2">
@@ -999,7 +999,7 @@
                             <div class="m-auto w-25 btns__ d-flex justify-content-center align-items-center">
                                 <button class="bntnt mx-2">+</button>
                             </div>
-                            <button class="bntnt mx-2 position-absolute" style="top: 10px;right: -80px;">-</button> 
+                            <button class="bntnt mx-2 position-absolute" style="top: 10px;right: -80px;">-</button>
                         </div>
                             <div class="b_t_n_s d-flex flex-column">
                                 <div class="button bt_n4 my-2">Next</div>
@@ -1107,9 +1107,9 @@
             $('.no_').click(() => {
                 for (let i = 0; i <= 100; i++) {
                 $('#loop').append(`
-                    <option value="">${i}</option>                    
+                    <option value="">${i}</option>
                     `);
-                }                
+                }
                 $('#show_show').fadeIn(1500);
                 $('#show_show').css('display', 'flex');
                 $('.fs_ .butu').fadeOut(1000);

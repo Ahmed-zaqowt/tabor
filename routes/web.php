@@ -28,3 +28,9 @@ Route::get('user/profile',function (){
 Route::get('employees/profile',function (){
     return auth('employee')->user();
 });
+Route::prefix('employees')->middleware('auth:employee')->group(function (){
+    Route::get('steps',[\App\Http\Controllers\Provider\Step\StepController::class,'index']);
+    Route::post('steps/store',[\App\Http\Controllers\Provider\Step\StepController::class,'salon'])->name('store.salon');
+    Route::post('steps/details/store',[\App\Http\Controllers\Provider\Step\StepController::class,'details'])->name('store.details');
+
+});
