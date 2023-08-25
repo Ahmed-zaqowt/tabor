@@ -3,22 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Employee extends Authenticatable
+class Service extends Model
 {
     use HasFactory;
     protected $primaryKey = 'uuid';
     public $incrementing = false;
     protected $guarded=[];
-    const PATH_EMPLOYEE = "/upload/employee/";
 
 
 
 
-
-
+//Boot
     public static function boot()
     {
         parent::boot();

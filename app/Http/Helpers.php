@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\File;
 function UploadImage($file, $path = null, $model, $imageable_id, $update = false, $id = null, $type, $name = null)
 {
 
-    $imagename = uniqid() . 'Controllers' . $file->getClientOriginalExtension();
+    $imagename = uniqid() . '.' . $file->getClientOriginalExtension();
     $file->move(public_path($path), $imagename);
     if (!$update) {
         return Upload::create([
@@ -51,7 +51,7 @@ function UploadImage($file, $path = null, $model, $imageable_id, $update = false
             }
             if ($image) {
                 File::delete(public_path($path . $image->filename));
-               $image->update(
+                $image->update(
                     [
                         'filename' => $imagename,
                         'imageable_id' => $imageable_id,

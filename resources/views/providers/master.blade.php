@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{asset('../css/style.css')}}">
     <link rel="stylesheet" href="{{asset('../css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('../css/swiper-bundle.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('dist/image-uploader.min.css')}}">
 
 
     @yield('style')
