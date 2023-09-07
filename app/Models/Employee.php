@@ -17,6 +17,10 @@ class Employee extends Authenticatable
 
 
 
+    function line(){
+        return $this->hasMany(Line::class) ;
+    }
+
 
 
     public static function boot()

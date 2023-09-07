@@ -16,10 +16,9 @@ return new class extends Migration
             $table->string('phone');
             $table->text('password')->nullable();
             $table->text('name')->nullable();
-
+            $table->boolean('status')->default(false);
             $table->foreignUuid('salon_uuid');
             $table->foreignUuid('description')->nullable();
-
             $table->timestamps();
         });
     }

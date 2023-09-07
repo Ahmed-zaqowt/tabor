@@ -508,7 +508,7 @@ header .container {
     width: 360px;
     direction: ltr;
     text-align: left;
-   
+
 }
 .featuer p{
     position: relative;
@@ -657,7 +657,7 @@ header .container {
   .none{
     display: none;
   }
-  
+
   .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -836,7 +836,7 @@ footer{
     /* left: 18%; */
     font-size: 12px;
 }
-  
+
   .tabs .tab {
     -webkit-box-ordinal-group: 100;
     -webkit-order: 99;
@@ -850,26 +850,26 @@ footer{
     display: none;
     padding: 1rem;
   }
-  
+
   .tabs input[type="radio"] {
     position: absolute;
     opacity: 0;
   }
-  
+
   .tabs input[type="radio"]:checked + #label {
      background: linear-gradient(to left , var(--blue) , var(--pink));
      color:white }
-  
+
   .tabs input[type="radio"]:checked + label + .tab { display: block; }
    @media (max-width: 45em) {
-  
+
   .tabs .tab,  .tabs #label {
     -webkit-box-ordinal-group: NaN;
     -webkit-order: initial;
     -ms-flex-order: initial;
     order: initial;
   }
-  
+
   .tabs #label {
     width: 100%;
     margin-right: 0;
@@ -880,7 +880,7 @@ footer{
     color: black;
   }
   .tab .container{
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -1344,7 +1344,7 @@ footer{
 .display-flex-important {
     display: flex !important;
   }
-  
+
 .parent_popup_card form .form-group{
     width: fit-content;
 }
@@ -2118,9 +2118,10 @@ table tr {
     bottom: 300px;
     min-height: 300px
 }
+/*
 .tabels__{
     overflow: auto;
-}
+}*/
 .table{
     width: 100%;
 }
