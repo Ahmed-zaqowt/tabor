@@ -583,14 +583,7 @@
             <header class="bg-white head col-lg-12">
                 <div class="container d-flex justify-content-between align-items-center">
                     <div class="col-lg-6 d-flex justify-content-start align-items-center">
-                        <h2 class="mr-5">Operation</h2>
-                        <div class="switch_ ml-5">
-                            <span>open</span>
-                            <div class="sw">
-                                <input type="checkbox" hidden="hidden" id="username">
-                                <label class="switch" for="username"></label>
-                            </div>
-                        </div>
+                        <h2 class="mr-5">Orders</h2>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-end">
                         <div class="user d-flex justify-content-left align-items-center">
@@ -604,97 +597,6 @@
             </header>
 
             <div class="container">
-                <div class="content-body pt-5 px-3">
-                    <div class="customer_btn">
-                        <span>Customers</span>
-                        <button class="border-pink ml-5"><i class="fas fa-plus"></i> add new customer to
-                            the fastest tabor</button>
-                    </div>
-                    <div class="content-b my-5">
-                        <!-- Swiper -->
-
-                    @forelse($emps as $emp)
-                            <div class="swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="two">
-                                            <div class="card_prof bg-white">
-                                                <div class="_img_">
-                                                    <div class="layer_card_img_prof"></div>
-                                                    <img src="{{ asset('../images/NoPath - Copy (16).png') }} " alt="">
-                                                </div>
-                                                <div class="data_card mt-4">
-                                                    <div
-                                                        class="switch-data_card w-100 d-flex justify-content-between align-items-center">
-                                                        <span>Lorem Lorem</span>
-                                                        <div class="sw">
-                                                            <input type="checkbox" hidden="hidden" id="username1">
-                                                            <label class="switch" for="username1"></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="data_person">
-                                                        <div class="data_parent">
-                                                            <div class="d-flex align-items-center">
-                                                                <p>{{ $emp->line->count() }}</p>
-                                                                <span class="ml-3">person</span>
-                                                            </div>
-                                                            <div class="text-center queues">
-                                                                <p class="m-0 text-secondary">in tabor</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <button data-id="{{ $emp->uuid }}" class="send_card text-white py-4 add-customer">
-                                                    <i class="fas fa-plus"></i> add customer to tabor
-                                                </button>
-                                            </div>
-                                            <div class="names">
-                                                @if($emp->line->count() > 2)
-                                                    @for($i = 0 ; $i < 3 ; $i++)
-                                                        <div class="name my-2 d-flex justify-content-between align-items-center">
-                                                            <p>{{ $emp->line[$i]->phone }}</p>
-                                                            <p>{{ $loop->index + 1 }}</p>
-                                                        </div>
-                                                    @endfor
-
-                                                @else
-                                                    @for($i = 0 ; $i < $emp->line->count() ; $i++)
-                                                        <div class="name my-2 d-flex justify-content-between align-items-center">
-                                                            <p>{{ $emp->line[$i]->phone }}</p>
-                                                            <p>{{ $loop->index + 1 }}</p>
-                                                        </div>
-                                                    @endfor
-
-                                                @endif
-
-                                                <button class="view_all" data-id="{{ $emp->uuid }}">
-                                                    <p class="m-0" >view All</p>
-                                                    <i class="fas fa-chevron-down"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        @empty
-                        <p>NO Employee</p>
-                        @endforelse
-                        <div class="swiper-button-next"><img src="{{ asset('../images/Group 39244.png') }} " alt=""></div>
-                        <div class="swiper-button-prev"><img src="{{ asset('../images/Group 39245.png') }} " alt=""></div>
-                        <div class="cards_profile d-flex justify-content-between">
-
-
-
-
-
-
-
-
-                        </div>
-                    </div>
-                </div>
                 <div class="tabels_content py-5">
                     <div class="tabels__ my-5">
                         <p class="ml-3" style="color: #5F5AFF;font-size: 20px;">Currently in service</p>
@@ -707,12 +609,13 @@
                             <thead>
                             <tr class="">
                                 <th>#</th>
-                                <th><button style="background: transparent;border: none;"></button>Phone</th>
-                                <th><button style="background: transparent;border: none;"></button>Name</th>
-                                <th><button style="background: transparent;border: none;"></button>Staff</th>
-                                <th><button style="background: transparent;border: none;"></button>amount</th>
-                                <th><button style="background: transparent;border: none;"></button>Status</th>
-                                <th> Actions</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Category</th>
+                                <th>Company</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                         </table>
@@ -725,111 +628,6 @@
                             <a href=""><i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
-                    <div class="tabels__ my-5">
-                        <p class="ml-3" style="color: #5F5AFF;font-size: 20px;">In tabor</p>
-                        <table id="datatable_tabor" class="col-lg-12">
-                                <thead>
-                                <tr class="">
-                                    <th>#</th>
-                                    <th><button style="background: transparent;border: none;"></button>Phone</th>
-                                    <th><button style="background: transparent;border: none;"></button>Name</th>
-                                    <th><button style="background: transparent;border: none;"></button>Staff</th>
-                                    <th><button style="background: transparent;border: none;"></button>amount</th>
-                                    <th><button style="background: transparent;border: none;"></button>Status</th>
-                                    <th> Actions</th>
-                                </tr>
-
-                                </thead>
-
-
-                        </table>
-
-                        <div class="pagination d-flex justify-content-between align-items-center ">
-                            <a href=""> <i class="fas fa-chevron-left"></i></a>
-                            <a href="" class="a">1</a>
-                            <a href="" class="a">2</a>
-                            <a href="" class="a">3</a>
-                            <a href="" class="a">4</a>
-                            <a href=""><i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="tabels__ my-5">
-                        <p class="ml-3" style="color: #5F5AFF; font-size: 20px;">finished</p>
-                        <table id="datatable_finished" class="col-lg-12">
-                             <thead>
-                             <tr class="">
-                                 <th>#</th>
-                                 <th><button style="background: transparent;border: none;"></button>Phone</th>
-                                 <th><button style="background: transparent;border: none;"></button>Name</th>
-                                 <th><button style="background: transparent;border: none;"></button>Staff</th>
-                                 <th><button style="background: transparent;border: none;"></button>amount</th>
-                                 <th><button style="background: transparent;border: none;"></button>Status</th>
-                                 <th> Actions</th>
-                             </tr>
-                             </thead>
-
-                        </table>
-                        <div class="pagination d-flex justify-content-between align-items-center ">
-                            <a href=""> <i class="fas fa-chevron-left"></i></a>
-                            <a href="" class="a">1</a>
-                            <a href="" class="a">2</a>
-                            <a href="" class="a">3</a>
-                            <a href="" class="a">4</a>
-                            <a href=""><i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="tabels__ my-5">
-                        <p class="ml-3" style="color: #5F5AFF;font-size: 20px;">canceled</p>
-                        <table id="datatable_canceled" class="col-lg-12">
-                            <thead>
-                            <tr class="">
-                                <th>#</th>
-                                <th><button style="background: transparent;border: none;"></button>Phone</th>
-                                <th><button style="background: transparent;border: none;"></button>Name</th>
-                                <th><button style="background: transparent;border: none;"></button>Staff</th>
-                                <th><button style="background: transparent;border: none;"></button>amount</th>
-                                <th><button style="background: transparent;border: none;"></button>Status</th>
-                                <th> Actions</th>
-                            </tr>
-                            </thead>
-
-                        </table>
-                        <div class="pagination d-flex justify-content-between align-items-center ">
-                            <a href=""> <i class="fas fa-chevron-left"></i></a>
-                            <a href="" class="a">1</a>
-                            <a href="" class="a">2</a>
-                            <a href="" class="a">3</a>
-                            <a href="" class="a">4</a>
-                            <a href=""><i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="tabels__ my-5">
-                        <p class="ml-3" style="color: #5F5AFF;font-size: 20px;">no show up</p>
-                        <table id="datatable_no_show_up" class="col-lg-12">
-                            <thead>
-                            <tr class="">
-                                <th>#</th>
-                                <th><button style="background: transparent;border: none;"></button>Phone</th>
-                                <th><button style="background: transparent;border: none;"></button>Name</th>
-                                <th><button style="background: transparent;border: none;"></button>Staff</th>
-                                <th><button style="background: transparent;border: none;"></button>amount</th>
-                                <th><button style="background: transparent;border: none;"></button>Status</th>
-                                <th> Actions</th>
-                            </tr>
-                            </thead>
-
-                        </table>
-                        <div class="pagination d-flex justify-content-between align-items-center ">
-                            <a href=""> <i class="fas fa-chevron-left"></i></a>
-                            <a href="" class="a">1</a>
-                            <a href="" class="a">2</a>
-                            <a href="" class="a">3</a>
-                            <a href="" class="a">4</a>
-                            <a href=""><i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -869,10 +667,6 @@
                     success: function(result) {
                         toastr.success(result.success);
                         table.draw()
-                        table2.draw()
-                        table3.draw()
-                        table4.draw()
-                        table5.draw()
                     },
                     error: function(data) {
                         if (data.status === 422) {
@@ -922,7 +716,7 @@
             paging: false,
             info: false,
             ajax: {
-                url:  '{{ route('operation.getdata.service') }}' ,
+                url:  '{{ route('order.getdata') }}' ,
             },
             columns: [{
                 data: 'DT_RowIndex',
@@ -931,34 +725,40 @@
                 searchable: false
             },
                 {
-                    data: 'phone',
-                    name: 'phone',
-                    orderable: true,
-                    searchable: true
-                },
-                {
                     data: 'name',
                     name: 'name',
                     orderable: true,
                     searchable: true
                 },
                 {
-                    data: 'staff',
-                    name: 'staff',
+                    data: 'phone',
+                    name: 'phone',
                     orderable: true,
                     searchable: true
                 },
                 {
-                    data: 'amount',
-                    name: 'amount',
+                    data: 'email',
+                    name: 'email',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'category',
+                    name: 'category',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'company_name',
+                    name: 'company',
                     orderable: true,
                     searchable: true
                 },
                 {
                     data: 'status',
                     name: 'status',
-                    orderable: true,
-                    searchable: true
+                    orderable: false,
+                    searchable: false
                 },
                 {
                     data: 'action',
@@ -970,229 +770,6 @@
 
         });
 
-        var table2 = $('#datatable_tabor').DataTable({
-            processing: true,
-            serverSide: true,
-            responsive: true,
-            searching: false,
-            paging: false,
-            info: false,
-            ajax: {
-                url:  '{{ route('operation.getdata.tabor') }}' ,
-            },
-            columns: [{
-                data: 'DT_RowIndex',
-                name: 'DT_RowIndex',
-                orderable: false,
-                searchable: false
-            },
-                {
-                    data: 'phone',
-                    name: 'phone',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'name',
-                    name: 'name',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'staff',
-                    name: 'staff',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'amount',
-                    name: 'amount',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'status',
-                    name: 'status',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false
-                },
-            ]
-
-        });
-
-        var table3 = $('#datatable_finished').DataTable({
-            processing: true,
-            serverSide: true,
-            responsive: true,
-            searching: false,
-            paging: false,
-            info: false,
-            ajax: {
-                url:  '{{ route('operation.getdata.finished') }}' ,
-            },
-            columns: [{
-                data: 'DT_RowIndex',
-                name: 'DT_RowIndex',
-                orderable: false,
-                searchable: false
-            },
-                {
-                    data: 'phone',
-                    name: 'phone',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'name',
-                    name: 'name',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'staff',
-                    name: 'staff',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'amount',
-                    name: 'amount',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'status',
-                    name: 'status',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false
-                },
-            ]
-
-        });
-
-        var table4 = $('#datatable_canceled').DataTable({
-            processing: true,
-            serverSide: true,
-            responsive: true,
-            searching: false,
-            paging: false,
-            info: false,
-            ajax: {
-                url:  '{{ route('operation.getdata.canceled') }}' ,
-            },
-            columns: [{
-                data: 'DT_RowIndex',
-                name: 'DT_RowIndex',
-                orderable: false,
-                searchable: false
-            },
-                {
-                    data: 'phone',
-                    name: 'phone',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'name',
-                    name: 'name',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'staff',
-                    name: 'staff',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'amount',
-                    name: 'amount',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'status',
-                    name: 'status',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false
-                },
-            ]
-
-        });
-
-        var table5 = $('#datatable_no_show_up').DataTable({
-            processing: true,
-            serverSide: true,
-            responsive: true,
-            searching: false,
-            paging: false,
-            info: false,
-            ajax: {
-                url:  '{{ route('operation.getdata.canceled') }}' ,
-            },
-            columns: [{
-                data: 'DT_RowIndex',
-                name: 'DT_RowIndex',
-                orderable: false,
-                searchable: false
-            },
-                {
-                    data: 'phone',
-                    name: 'phone',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'name',
-                    name: 'name',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'staff',
-                    name: 'staff',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'amount',
-                    name: 'amount',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'status',
-                    name: 'status',
-                    orderable: true,
-                    searchable: true
-                },
-                {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false
-                },
-            ]
-
-        });
 
         {{--      front      --}}
         $(document).ready(function () {

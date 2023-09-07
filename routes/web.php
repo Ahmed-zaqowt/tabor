@@ -53,6 +53,15 @@ Route::prefix('employees')->middleware('auth:employee')->group(function (){
      });
 });
 
+Route::prefix('admins')->middleware('auth:admin')->group(function (){
+
+    Route::prefix('orders')->name('order.')->group(function (){
+        Route::get('/',[\App\Http\Controllers\Admin\Order\OrderController::class,'index'])->name('index');
+        Route::get('/getdata',[\App\Http\Controllers\Admin\Order\OrderController::class,'getdata'])->name('getdata');
+        Route::post('/update_status',[\App\Http\Controllers\Admin\Order\OrderController::class,'update_status'])->name('update_status');
+
+    });
+});
 
 
 
