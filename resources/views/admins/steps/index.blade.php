@@ -482,13 +482,6 @@
                 <ul>
                     <li class="is-active">contact information</li>
                     <li>service provider information</li>
-                    <li>working hours</li>
-                    <li>upload images</li>
-                    <li>service list</li>
-                    <li>staff info</li>
-                    <li>time policy</li>
-                    <li>payment policy</li>
-                    <li>cancelation refund policy</li>
                     <li>adding another branch</li>
                 </ul>
             </div>
@@ -496,12 +489,19 @@
             <div class="form-wrapper">
 
                 <fieldset class="section fieldset is-active mt-5">
+<<<<<<< Updated upstream
                     <h3>Your Details</h3>
                     <form method="post" action="{{route('store.salon')}}" class="add-mode-form-1">
                         @csrf
+=======
+                        <h3>Your Details</h3>
+                        <form method="post" action="{{route('store.salon')}}" class="add-mode-form-1">
+                            @csrf
+>>>>>>> Stashed changes
                         <input type="text" name="name" value="{{@$salon->name}}" id="name" placeholder="yor name">
                         <div class="invalid-feedback"></div>
                         <input type="text" name="email" value="{{@$salon->email}}" id="email" placeholder="Email">
+<<<<<<< Updated upstream
                         <div class="invalid-feedback"></div>
                         <input type="text" name="representing" value="{{@$salon->representing}}" id="email"
                                placeholder="who are you representing">
@@ -512,6 +512,20 @@
                         <input type="number" name="phone_other" value="{{@$salon->phone_other}}" id="email"
                                placeholder="another phone number">
                         <div class="invalid-feedback"></div>
+=======
+                            <div class="invalid-feedback"></div>
+                            <select  name="representing" id="msms">
+                                <option value="">resturant</option>
+                                <option value="">spa</option>
+                                <option value="women" {{(@$salon->category=='women')?'selected':''}}>women' Salons</option>
+                                <option value="men" {{(@$salon->category=='men')?'selected':''}}>men' Salons</option>
+                            </select>
+                            <div class="invalid-feedback"></div>
+                        <input type="number" name="phone" value="{{@$salon->phone}}" id="phone" placeholder="phone number">
+                            <div class="invalid-feedback"></div>
+                        <input type="number" name="phone_other" value="{{@$salon->phone_other}}"  id="email" placeholder="another phone number">
+                            <div class="invalid-feedback"></div>
+>>>>>>> Stashed changes
                         <div class="b_t_n_s d-flex flex-column">
                             <div class="button bt_n2 my-2">Next</div>
                             <button class="button border-0">save</button>
@@ -589,7 +603,33 @@
                                     </p>
                                     <input type="file" name="email" id="e1" placeholder="" class="d-none">
                                 </label>
+<<<<<<< Updated upstream
                                  </div> -->
+=======
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center size_w">
+                                <input type="text" name="tax" value="{{@$salon->tax}}" id="email" placeholder="tax number">
+                                <label for="e1"
+                                       class="text-left pl-2 d-flex align-items-center justify-content-center"
+                                       style="padding: 0 !important;">
+                                    <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
+                                        <i class="fas fa-camera"></i>
+                                    </p>
+                                    <input type="file" name="tax_image"  placeholder="" class="d-none">
+                                </label>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center size_w">
+                                <input type="text" name="mail_number" value="{{@$salon->mail_number}}" id="email" placeholder="wasel mail number">
+                                <label for="e1"
+                                       class="text-left pl-2 d-flex align-items-center justify-content-center"
+                                       style="padding: 0 !important;">
+                                    <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
+                                        <i class="fas fa-camera"></i>
+                                    </p>
+                                    <input type="file" name="mail_number_image"  id="e1" placeholder="" class="d-none">
+                                </label>
+                            </div>
+>>>>>>> Stashed changes
 
                             </div>
                             <div class="col-lg-6">
@@ -626,21 +666,42 @@
                                 <input type="text" name="location" id="email" placeholder="google location">
                             </div>
                         </div>
+<<<<<<< Updated upstream
                         <div class="b_t_n_s d-flex flex-column">
                             <div class="button bt_n2 my-2">Next</div>
                             <button class="button border-0 mb-2">save</button>
                             <button class="button_preve">Previous</button>
+=======
+                        <div class="col-lg-6">
+                            <select name="country" id="msms">
+                                <option value="" disabled>country</option>
+                                <option value="palestine" {{(@$salon->country=='palestine')?'selected':''}}>palestine</option>
+                                <option value="" >eygpt</option>
+                                <option value="">sudan</option>
+                                <option value="">usa</option>
+                                <option value="">other</option>
+                            </select>
+                            <select name="city" id="msms">
+                                <option value="" disabled>city</option>
+                                <option value="gaza" {{(@$salon->city=='gaza')?'selected':''}}>gaza</option>
+                                <option value="">hebron</option>
+                                <option value="">jerusalem</option>
+                                <option value="">london</option>
+                                <option value="">other</option>
+                            </select>
+
+                            <input type="text" name="location" id="email" placeholder="google location">
+>>>>>>> Stashed changes
                         </div>
                     </form>
                 </fieldset>
-
-
                 <fieldset class="section section2 fieldset mt-5"
                           style="height: 786px; margin: 307px 0;position: relative;top: -44px;">
                     <div class="tabels__ my-5">
                         <div class="per text-left">
                             <p class="ml-3">Period</p>
                         </div>
+<<<<<<< Updated upstream
                         <table class="col-lg-12 table">
                             <tr class="">
                                 <th>Periods</th>
@@ -994,6 +1055,35 @@
                         <button class="button_preve">Previous</button>
                     </div>
                 </fieldset>
+=======
+                        <form method="post" action="{{route('store.salon')}}" class="add-mode-form-1">
+                            @csrf
+                            <input type="text" name="name" value="{{@$salon->name}}" id="name" placeholder="yor name">
+                            <div class="invalid-feedback"></div>
+                            <input type="text" name="email" value="{{@$salon->email}}" id="email" placeholder="Email">
+                            <div class="invalid-feedback"></div>
+                            <select  name="representing" id="msms">
+                                <option value="">resturant</option>
+                                <option value="">spa</option>
+                                <option value="women" {{(@$salon->category=='women')?'selected':''}}>women' Salons</option>
+                                <option value="men" {{(@$salon->category=='men')?'selected':''}}>men' Salons</option>
+                            </select>
+                            <div class="invalid-feedback"></div>
+                            <input type="number" name="phone" value="{{@$salon->phone}}" id="phone" placeholder="phone number">
+                            <div class="invalid-feedback"></div>
+                            <input type="number" name="phone_other" value="{{@$salon->phone_other}}"  id="email" placeholder="another phone number">
+                            <div class="invalid-feedback"></div>
+                            <div class="b_t_n_s d-flex flex-column d-flex flex-column">
+                                <div class="button bt_n4 my-2">Next</div>
+                                <button class="button_preve">Previous</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </fieldset>
+
+>>>>>>> Stashed changes
             </div>
         </div>
     </div>

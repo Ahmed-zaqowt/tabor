@@ -67,6 +67,15 @@ Route::prefix('admins')->middleware('auth:admin')->group(function (){
         Route::get('/',[\App\Http\Controllers\Admin\Order\OrderController::class,'index'])->name('index');
         Route::get('/getdata',[\App\Http\Controllers\Admin\Order\OrderController::class,'getdata'])->name('getdata');
         Route::post('/update_status',[\App\Http\Controllers\Admin\Order\OrderController::class,'update_status'])->name('update_status');
+    });
+
+    Route::prefix('steps')->name('admin.steps')->group(function (){
+        Route::get('/',[\App\Http\Controllers\Admin\Step\StepController::class,'index']);
+    });
+
+    Route::prefix('providers')->name('provider.')->group(function (){
+        Route::get('/',[\App\Http\Controllers\Admin\Provider\ProviderController::class,'index'])->name('index');
+        Route::get('/getdata',[\App\Http\Controllers\Admin\Provider\ProviderController::class,'getdata'])->name('getdata');
 
     });
 });
