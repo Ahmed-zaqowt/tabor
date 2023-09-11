@@ -117,7 +117,7 @@
                         <p>Home</p>
                     </div>
                 </a>
-                <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
+                <a href="{{route('operation.index')}}" class="my-4 customer d-flex justify-content-left align-items-center">
                     <img src="../images/mor.png" alt="">
                     <div class="para ml-2">
                         <p>Operations</p>

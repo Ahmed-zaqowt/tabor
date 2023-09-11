@@ -504,13 +504,13 @@
                         <p>Home</p>
                     </div>
                 </a>
-                <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
+                <a href="{{route('operation.index')}}" class="my-4 customer d-flex justify-content-left align-items-center">
                     <img src="{{ asset('../images/mor.png') }} " alt="">
                     <div class="para ml-2">
                         <p>Operations</p>
                     </div>
                 </a>
-                <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
+                <a href="{{route('steps.index')}}" class="my-4 customer d-flex justify-content-left align-items-center">
                     <i class="fas fa-sliders-h"></i>
                     <div class="para ml-2">
                         <p>Setup</p>

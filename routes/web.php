@@ -13,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/test', function () {
 
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    \Illuminate\Support\Facades\Artisan::call('config:clear');
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
+    \Illuminate\Support\Facades\Artisan::call('route:clear');
+    dd(3232);
+});
 Route::view('/', 'providers.main.index');
 Route::view('/ad', 'auth.auth');
 Route::get('a',function (){
@@ -31,7 +39,7 @@ Route::get('employees/profile',function (){
 Route::prefix('employees')->middleware('auth:employee')->group(function (){
 
      Route::prefix('steps')->group(function (){
-         Route::get('/',[\App\Http\Controllers\Provider\Step\StepController::class,'index']);
+         Route::get('/',[\App\Http\Controllers\Provider\Step\StepController::class,'index'])->name('steps.index');
          Route::post('/store',[\App\Http\Controllers\Provider\Step\StepController::class,'salon'])->name('store.salon');
          Route::post('/details/store',[\App\Http\Controllers\Provider\Step\StepController::class,'details'])->name('store.details');
          Route::post('/images',[\App\Http\Controllers\Provider\Step\StepController::class,'images'])->name('store.images');

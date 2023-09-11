@@ -68,7 +68,7 @@ class StepController extends Controller
 
 
         ];
-        dd($request->all());
+
         $this->validate($request, $rules);
         $salon = Salon::query()
             ->updateOrCreate(

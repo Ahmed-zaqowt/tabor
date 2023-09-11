@@ -14,16 +14,16 @@
             width: 100%;
         }
 
-        input:checked+.switch {
+        input:checked + .switch {
             background: #72da67;
         }
 
-        input:checked+.switch::before {
+        input:checked + .switch::before {
             left: 27px;
             background: #fff;
         }
 
-        input:checked+.switch:active::before {
+        input:checked + .switch:active::before {
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(0, 150, 136, 0.2);
         }
 
@@ -261,7 +261,6 @@
         }
 
 
-
         /* COLUMNS */
 
         .col {
@@ -496,128 +495,142 @@
 
             <div class="form-wrapper">
 
-                    <fieldset class="section fieldset is-active mt-5">
-                        <h3>Your Details</h3>
-                        <form method="post" action="{{route('store.salon')}}" class="add-mode-form-1">
-                            @csrf
+                <fieldset class="section fieldset is-active mt-5">
+                    <h3>Your Details</h3>
+                    <form method="post" action="{{route('store.salon')}}" class="add-mode-form-1">
+                        @csrf
                         <input type="text" name="name" value="{{@$salon->name}}" id="name" placeholder="yor name">
-                            <div class="invalid-feedback"></div>
+                        <div class="invalid-feedback"></div>
                         <input type="text" name="email" value="{{@$salon->email}}" id="email" placeholder="Email">
-                            <div class="invalid-feedback"></div>
-                        <input type="text" name="representing" value="{{@$salon->representing}}" id="email" placeholder="who are you representing">
-                            <div class="invalid-feedback"></div>
-                        <input type="number" name="phone" value="{{@$salon->phone}}" id="phone" placeholder="phone number">
-                            <div class="invalid-feedback"></div>
-                        <input type="number" name="phone_other" value="{{@$salon->phone_other}}"  id="email" placeholder="another phone number">
-                            <div class="invalid-feedback"></div>
+                        <div class="invalid-feedback"></div>
+                        <input type="text" name="representing" value="{{@$salon->representing}}" id="email"
+                               placeholder="who are you representing">
+                        <div class="invalid-feedback"></div>
+                        <input type="number" name="phone" value="{{@$salon->phone}}" id="phone"
+                               placeholder="phone number">
+                        <div class="invalid-feedback"></div>
+                        <input type="number" name="phone_other" value="{{@$salon->phone_other}}" id="email"
+                               placeholder="another phone number">
+                        <div class="invalid-feedback"></div>
                         <div class="b_t_n_s d-flex flex-column">
                             <div class="button bt_n2 my-2">Next</div>
                             <button class="button border-0">save</button>
                         </div>
-                        </form>
-                    </fieldset>
+                    </form>
+                </fieldset>
 
                 <!-- أضف باقي الستيبس هنا -->
                 <fieldset class="section fieldset mt-5 col-lg-12">
                     <h3>Your Details</h3>
-                    <form method="post" action="{{route('store.details')}}" class="add-mode-form-2"   enctype="multipart/form-data">
+                    <form method="post" action="{{route('store.details')}}" class="add-mode-form-2"
+                          enctype="multipart/form-data">
                         @csrf
-                    <div class="d-flex cvcvc">
+                        <div class="d-flex cvcvc">
 
-                        <div class="col-lg-6">
-                            <input type="hidden" name="uuid" id="uuid" value="{{@$salon->uuid}}" placeholder="uuid">
+                            <div class="col-lg-6">
+                                <input type="hidden" name="uuid" id="uuid" value="{{@$salon->uuid}}" placeholder="uuid">
 
-                            <input type="text" name="service_provider_name" value="{{@$salon->service_provider_name}}" id="name"
-                                   placeholder="Service Provider Name that will appered to customer">
-                            <input type="text" name="company_name" value="{{@$salon->company_name}}" id="email" placeholder="Company Name">
-                            <select name="category" id="msms">
-                                <option value="">resturant</option>
-                                <option value="">spa</option>
-                                <option value="women" {{(@$salon->category=='women')?'selected':''}}>women' Salons</option>
-                                <option value="men" {{(@$salon->category=='men')?'selected':''}}>men' Salons</option>
-                                <option value="">other</option>
-                            </select>
-                            <div class="d-flex justify-content-between align-items-center size_w">
-                                <input type="text" name="cr" value="{{@$salon->cr}}" id="email" placeholder="cr number">
-                                <label for="e1"
-                                       class="text-left pl-2 d-flex align-items-center justify-content-center"
-                                       style="padding: 0 !important;">
+                                <input type="text" name="service_provider_name"
+                                       value="{{@$salon->service_provider_name}}" id="name"
+                                       placeholder="Service Provider Name that will appered to customer">
+                                <input type="text" name="company_name" value="{{@$salon->company_name}}" id="email"
+                                       placeholder="Company Name">
+                                <select name="category" id="msms">
+                                    <option value="">resturant</option>
+                                    <option value="">spa</option>
+                                    <option value="women" {{(@$salon->category=='women')?'selected':''}}>women' Salons
+                                    </option>
+                                    <option value="men" {{(@$salon->category=='men')?'selected':''}}>men' Salons
+                                    </option>
+                                    <option value="">other</option>
+                                </select>
+                                <div class="d-flex justify-content-between align-items-center size_w">
+                                    <input type="text" name="cr" value="{{@$salon->cr}}" id="email"
+                                           placeholder="cr number">
+                                    <label for="e1"
+                                           class="text-left pl-2 d-flex align-items-center justify-content-center"
+                                           style="padding: 0 !important;">
+                                        <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
+                                            <i class="fas fa-camera"></i>
+                                        </p>
+                                        <input type="file" name="cr_image" id="e1" placeholder="" class="d-none">
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center size_w">
+                                    <input type="text" name="tax" value="{{@$salon->tax}}" id="email"
+                                           placeholder="tax number">
+                                    <label for="e1"
+                                           class="text-left pl-2 d-flex align-items-center justify-content-center"
+                                           style="padding: 0 !important;">
+                                        <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
+                                            <i class="fas fa-camera"></i>
+                                        </p>
+                                        <input type="file" name="tax_image" placeholder="" class="d-none">
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center size_w">
+                                    <input type="text" name="mail_number" value="{{@$salon->mail_number}}" id="email"
+                                           placeholder="wasel mail number">
+                                    <label for="e1"
+                                           class="text-left pl-2 d-flex align-items-center justify-content-center"
+                                           style="padding: 0 !important;">
+                                        <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
+                                            <i class="fas fa-camera"></i>
+                                        </p>
+                                        <input type="file" name="mail_number_image" id="e1" placeholder=""
+                                               class="d-none">
+                                    </label>
+                                </div>
+                                <!-- <div class="d-flex justify-content-between align-items-center">
+                                <input type="text" name="email" id="email" placeholder="attachment of signed tabor contract">
+                                <label for="e1" class="text-left pl-2 d-flex align-items-center justify-content-center" style="padding: 0 !important;">
                                     <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
                                         <i class="fas fa-camera"></i>
                                     </p>
-                                    <input type="file" name="cr_image" id="e1" placeholder="" class="d-none">
+                                    <input type="file" name="email" id="e1" placeholder="" class="d-none">
                                 </label>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center size_w">
-                                <input type="text" name="tax" value="{{@$salon->tax}}" id="email" placeholder="tax number">
-                                <label for="e1"
-                                       class="text-left pl-2 d-flex align-items-center justify-content-center"
-                                       style="padding: 0 !important;">
-                                    <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
-                                        <i class="fas fa-camera"></i>
-                                    </p>
-                                    <input type="file" name="tax_image"  placeholder="" class="d-none">
-                                </label>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center size_w">
-                                <input type="text" name="mail_number" value="{{@$salon->mail_number}}" id="email" placeholder="wasel mail number">
-                                <label for="e1"
-                                       class="text-left pl-2 d-flex align-items-center justify-content-center"
-                                       style="padding: 0 !important;">
-                                    <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
-                                        <i class="fas fa-camera"></i>
-                                    </p>
-                                    <input type="file" name="mail_number_image"  id="e1" placeholder="" class="d-none">
-                                </label>
-                            </div>
-                            <!-- <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" name="email" id="email" placeholder="attachment of signed tabor contract">
-                            <label for="e1" class="text-left pl-2 d-flex align-items-center justify-content-center" style="padding: 0 !important;">
-                                <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
-                                    <i class="fas fa-camera"></i>
-                                </p>
-                                <input type="file" name="email" id="e1" placeholder="" class="d-none">
-                            </label>
-                             </div> -->
+                                 </div> -->
 
+                            </div>
+                            <div class="col-lg-6">
+                                <select name="country" id="msms">
+                                    <option value="" disabled>country</option>
+                                    <option value="palestine" {{(@$salon->country=='palestine')?'selected':''}}>
+                                        palestine
+                                    </option>
+                                    <option value="">eygpt</option>
+                                    <option value="">sudan</option>
+                                    <option value="">usa</option>
+                                    <option value="">other</option>
+                                </select>
+                                <select name="city" id="msms">
+                                    <option value="" disabled>city</option>
+                                    <option value="gaza" {{(@$salon->city=='gaza')?'selected':''}}>gaza</option>
+                                    <option value="">hebron</option>
+                                    <option value="">jerusalem</option>
+                                    <option value="">london</option>
+                                    <option value="">other</option>
+                                </select>
+                                <div class="d-flex justify-content-between align-items-center size_w">
+                                    <input type="text" value="{{@$salon->contract}}" name="contract" id="email"
+                                           placeholder="attachment of signed tabor contract">
+                                    <label for="e1"
+                                           class="text-left pl-2 d-flex align-items-center justify-content-center"
+                                           style="padding: 0 !important;">
+                                        <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
+                                            <i class="fas fa-camera"></i>
+                                        </p>
+                                        <input type="file" name="contract_image" id="e1" placeholder="" class="d-none">
+                                    </label>
+                                </div>
+                                <input type="text" name="location" id="email" placeholder="google location">
+                            </div>
                         </div>
-                        <div class="col-lg-6">
-                            <select name="country" id="msms">
-                                <option value="" disabled>country</option>
-                                <option value="palestine" {{(@$salon->country=='palestine')?'selected':''}}>palestine</option>
-                                <option value="" >eygpt</option>
-                                <option value="">sudan</option>
-                                <option value="">usa</option>
-                                <option value="">other</option>
-                            </select>
-                            <select name="city" id="msms">
-                                <option value="" disabled>city</option>
-                                <option value="gaza" {{(@$salon->city=='gaza')?'selected':''}}>gaza</option>
-                                <option value="">hebron</option>
-                                <option value="">jerusalem</option>
-                                <option value="">london</option>
-                                <option value="">other</option>
-                            </select>
-                            <div class="d-flex justify-content-between align-items-center size_w">
-                                <input type="text" value="{{@$salon->contract}}" name="contract" id="email"
-                                       placeholder="attachment of signed tabor contract">
-                                <label for="e1"
-                                       class="text-left pl-2 d-flex align-items-center justify-content-center"
-                                       style="padding: 0 !important;">
-                                    <p class="m-0 text-secondary" style="font-size: 11px;width: fit-content;">
-                                        <i class="fas fa-camera"></i>
-                                    </p>
-                                    <input type="file" name="contract_image" id="e1" placeholder="" class="d-none">
-                                </label>
-                            </div>
-                            <input type="text" name="location" id="email" placeholder="google location">
+                        <div class="b_t_n_s d-flex flex-column">
+                            <div class="button bt_n2 my-2">Next</div>
+                            <button class="button border-0 mb-2">save</button>
+                            <button class="button_preve">Previous</button>
                         </div>
-                    </div>
-                    <div class="b_t_n_s d-flex flex-column">
-                        <div class="button bt_n2 my-2">Next</div>
-                        <button class="button border-0 mb-2">save</button>
-                        <button class="button_preve">Previous</button>
-                    </div>
                     </form>
                 </fieldset>
 
@@ -634,7 +647,9 @@
                                 <th>Period 1</th>
                                 <th>Period 2</th>
                                 <th>Period 3</th>
-                                <th class="plus"><button class="_plus_">+</button></th>
+                                <th class="plus">
+                                    <button class="_plus_">+</button>
+                                </th>
                             </tr>
                             <tr class="date" style="margin: 30px;">
                                 <th>Work Houers</th>
@@ -782,33 +797,33 @@
                 </fieldset>
 
                 <fieldset class="section fieldset mt-5">
-                    <form method="post" action="{{route('store.images')}}" class="add-mode-form-3" enctype="multipart/form-data">
+                    <form method="post" action="{{route('store.images')}}" class="add-mode-form-3"
+                          enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="uuid" value="{{@$salon->uuid}}" id="nn" placeholder="">
 
                         <div class="d-flex justify-content-center align-items-center mb-5">
-                        <img src="../images/cmcm.png" width="130px" height="130px" alt="">
-                    </div>
-                    <div class="cvv">
-                        <label for="nn" class="text-left pl-2 d-flex align-items-center" style="width: 100%;">
-                            <p class="m-0 text-secondary" style="font-size: 11px;width: 200px;">upload logo</p>
-                            <input type="file" name="logo" id="nn" placeholder="">
-                        </label>
-                    </div>
+                            <img src="../images/cmcm.png" width="130px" height="130px" alt="">
+                        </div>
+                        <div class="cvv">
+                            <label for="nn" class="text-left pl-2 d-flex align-items-center" style="width: 100%;">
+                                <p class="m-0 text-secondary" style="font-size: 11px;width: 200px;">upload logo</p>
+                                <input type="file" name="logo" id="nn" placeholder="">
+                            </label>
+                        </div>
                         <div class="col-md-12">
                             <div class="input-field">
                                 <label class="active">@lang('Photos')</label>
                                 <div class="input-images" style="padding-top: .5rem;"></div>
                             </div>
                         </div>
-                    <div class="b_t_n_s d-flex flex-column">
-                        <div class="button bt_n2 my-2">Next</div>
-                        <button class="button border-0 mb-2">save</button>
-                        <button class="button_preve">Previous</button>
-                    </div>
+                        <div class="b_t_n_s d-flex flex-column">
+                            <div class="button bt_n2 my-2">Next</div>
+                            <button class="button border-0 mb-2">save</button>
+                            <button class="button_preve">Previous</button>
+                        </div>
                     </form>
                 </fieldset>
-
 
 
                 <fieldset class="section fieldset mt-5">
@@ -816,15 +831,18 @@
                         @csrf
                         <input type="hidden" name="uuid" id="uuid" value="{{@$salon->uuid}}" placeholder="uuid">
 
-                @foreach(@$salon->service as $item)
+                        @foreach(@$salon->service as $item)
                             <div class="d-flex justify-content-between align-items-center flex-column">
                                 <div class="left d-flex justify-content-between align-items-center coll__">
                                     <div class="d-flex justify-content-between align-items-center coll_ coll_- mr-5">
-                                        <input type="text" value="{{@$item->title}}" name="title[]"  placeholder="service title" class="mx-2">
+                                        <input type="text" value="{{@$item->title}}" name="title[]"
+                                               placeholder="service title" class="mx-2">
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center coll_">
-                                        <input type="number"  value="{{@$item->cost}}" name="cost[]" placeholder="cost" class="mx-2">
-                                        <input type="time"  value="{{@$item->time}}"  name="time[]" placeholder="estimated time" class="mx-2">
+                                        <input type="number" value="{{@$item->cost}}" name="cost[]" placeholder="cost"
+                                               class="mx-2">
+                                        <input type="time" value="{{@$item->time}}" name="time[]"
+                                               placeholder="estimated time" class="mx-2">
                                         <button class="bntnt mx-2">-</button>
                                     </div>
                                 </div>
@@ -832,94 +850,103 @@
                                     <button class="bntnt mx-2">+</button>
                                 </div>
                             </div>
-                @endforeach
-                    <div class="b_t_n_s d-flex flex-column">
-                        <div class="button bt_n2 my-2">Next</div>
-                        <button class="button border-0 mb-2">save</button>
-                        <button class="button_preve">Previous</button>
-                    </div>
-                    </form>
-                </fieldset>
-                <fieldset class="section fieldset mt-5 nmn">
-                    <form method="post" action="{{route('store.employees')}}" class="add-mode-form-3" enctype="multipart/form-data">
-                        @csrf
-                        <input type="hidden" name="uuid" value="{{@$salon->uuid}}" id="nn" placeholder="">
-                        @foreach(@$salon->employee as $item)
-                    <div class="parent_div position-relative">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" name="name[]" value="{{@$item->name}}"  placeholder="employee name">
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <label for="e3" class="text-left pl-2 d-flex align-items-center vv">
-                                <p class="m-0 text-secondary" style="font-size: 11px;">
-                                    employee picture
-                                </p>
-                                <input type="file" name="image[]"  id="e3" placeholder="">
-                            </label>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" name="description[]" value="{{@$item->description}}" id="name" placeholder="description">
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <input type="number" name="phone[]" value="{{@$item->phone}}" id="name" placeholder="description">
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <input type="password" name="password[]"  id="name" placeholder="description">
-                        </div>
                         @endforeach
-                        <div class="m-auto w-25 btns__ d-flex justify-content-center align-items-center">
-                            <button class="bntnt mx-2">+</button>
+                        <div class="b_t_n_s d-flex flex-column">
+                            <div class="button bt_n2 my-2">Next</div>
+                            <button class="button border-0 mb-2">save</button>
+                            <button class="button_preve">Previous</button>
                         </div>
-                        <button class="bntnt mx-2 position-absolute" style="top: 10px;right: -80px;">-</button>
-                    </div>
-                    <div class="b_t_n_s d-flex flex-column">
-                        <div class="button bt_n4 my-2">Next</div>
-                        <button class="button border-0 mb-2">save</button>
-                        <button class="button_preve">Previous</button>
-                    </div>
                     </form>
                 </fieldset>
+{{--                <fieldset class="section fieldset mt-5 nmn">--}}
+{{--                    <form method="post" action="{{route('store.employees')}}" class="add-mode-form-3"--}}
+{{--                          enctype="multipart/form-data">--}}
+{{--                        @csrf--}}
+{{--                        <input type="hidden" name="uuid" value="{{@$salon->uuid}}" id="nn" placeholder="">--}}
+{{--                        @foreach(@$salon->employee as $item)--}}
+{{--                            <div class="parent_div position-relative">--}}
+{{--                                <div class="d-flex justify-content-between align-items-center">--}}
+{{--                                    <input type="text" name="name[]" value="{{@$item->name}}"--}}
+{{--                                           placeholder="employee name">--}}
+{{--                                </div>--}}
+{{--                                <div class="d-flex justify-content-between align-items-center">--}}
+{{--                                    <label for="e3" class="text-left pl-2 d-flex align-items-center vv">--}}
+{{--                                        <p class="m-0 text-secondary" style="font-size: 11px;">--}}
+{{--                                            employee picture--}}
+{{--                                        </p>--}}
+{{--                                        <input type="file" name="image[]" id="e3" placeholder="">--}}
+{{--                                    </label>--}}
+{{--                                </div>--}}
+{{--                                <div class="d-flex justify-content-between align-items-center">--}}
+{{--                                    <input type="text" name="description[]" value="{{@$item->description}}" id="name"--}}
+{{--                                           placeholder="description">--}}
+{{--                                </div>--}}
+{{--                                <div class="d-flex justify-content-between align-items-center">--}}
+{{--                                    <input type="number" name="phone[]" value="{{@$item->phone}}" id="name"--}}
+{{--                                           placeholder="description">--}}
+{{--                                </div>--}}
+{{--                                <div class="d-flex justify-content-between align-items-center">--}}
+{{--                                    <input type="password" name="password[]" id="name" placeholder="description">--}}
+{{--                                </div>--}}
+{{--                                @endforeach--}}
+{{--                                <div class="m-auto w-25 btns__ d-flex justify-content-center align-items-center">--}}
+{{--                                    <button class="bntnt mx-2">+</button>--}}
+{{--                                </div>--}}
+{{--                                <button class="bntnt mx-2 position-absolute" style="top: 10px;right: -80px;">-</button>--}}
+{{--                            </div>--}}
+{{--                            <div class="b_t_n_s d-flex flex-column">--}}
+{{--                                <div class="button bt_n4 my-2">Next</div>--}}
+{{--                                <button class="button border-0 mb-2">save</button>--}}
+{{--                                <button class="button_preve">Previous</button>--}}
+{{--                            </div>--}}
+{{--                    </form>--}}
+{{--                </fieldset>--}}
 
                 <fieldset class="section fieldset mt-5">
                     <h5 class="my-3">what is the allowable waiting time before the customer is transferred to
                         the no show list</h5>
-                    <form method="post" action="{{route('store.time')}}" class="add-mode-form-3" enctype="multipart/form-data">
+                    <form method="post" action="{{route('store.time')}}" class="add-mode-form-3"
+                          enctype="multipart/form-data">
                         @csrf
-                    <select name="waiting_time" id="msms" class="mint">
-                        <option value="">how many minute</option>
-                        <option value="5" {{(@$salon->waiting_time==5)?'selected':''}}>5 minute</option>
-                        <option value="10" {{(@$salon->waiting_time==10)?'selected':''}}>10 minute</option>
-                        <option value="15" {{(@$salon->waiting_time==15)?'selected':''}}>15 minute</option>
-                        <option value="other">other</option>
-                    </select>
-                    <input type="number" name="waiting_time_1" value="{{@$salon->waiting_time}}" id="name" class="nummin" placeholder="other time">
-                    <div class="b_t_n_s d-flex flex-column">
-                        <div class="button bt_n4 my-2">Next</div>
-                        <button class="button border-0 mb-2">save</button>
-                        <button class="button_preve">Previous</button>
-                    </div>
+                        <select name="waiting_time" id="msms" class="mint">
+                            <option value="">how many minute</option>
+                            <option value="5" {{(@$salon->waiting_time==5)?'selected':''}}>5 minute</option>
+                            <option value="10" {{(@$salon->waiting_time==10)?'selected':''}}>10 minute</option>
+                            <option value="15" {{(@$salon->waiting_time==15)?'selected':''}}>15 minute</option>
+                            <option value="other">other</option>
+                        </select>
+                        <input type="number" name="waiting_time_1" value="{{@$salon->waiting_time}}" id="name"
+                               class="nummin" placeholder="other time">
+                        <div class="b_t_n_s d-flex flex-column">
+                            <div class="button bt_n4 my-2">Next</div>
+                            <button class="button border-0 mb-2">save</button>
+                            <button class="button_preve">Previous</button>
+                        </div>
                     </form>
                 </fieldset>
 
                 <fieldset class="section fieldset mt-5">
-                    <form method="post" action="{{route('store.pay')}}" class="add-mode-form-3" enctype="multipart/form-data">
+                    <form method="post" action="{{route('store.pay')}}" class="add-mode-form-3"
+                          enctype="multipart/form-data">
                         @csrf
-                    <div class="d-flex justify-content-between align-items-center flex-wrap amount__">
-                        <p class="mt-1">Is it mandatory to pay a to enter the tabor?</p>
-                        <div class="sw mr-4">
-                            <input type="checkbox" {{(@$salon->is_pay)?'checked':''}} name="is_pay" hidden="hidden" id="username1">
-                            <label class="switch"  for="username1"></label>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap amount__">
+                            <p class="mt-1">Is it mandatory to pay a to enter the tabor?</p>
+                            <div class="sw mr-4">
+                                <input type="checkbox" {{(@$salon->is_pay)?'checked':''}} name="is_pay" hidden="hidden"
+                                       id="username1">
+                                <label class="switch" for="username1"></label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-left align-items-center flex-wrap amount__">
-                        <p class="mt-2">Amount paid to be deducted from invoice</p>
-                        <input style="width: 230px;" value="{{@$salon->amount_paid}}" type="text" name="amount_paid" id="name" placeholder="**">
-                    </div>
-                    <div class="b_t_n_s d-flex flex-column">
-                        <div class="button bt_n4 my-2">Next</div>
-                        <button class="button border-0 mb-2">save</button>
-                        <button class="button_preve">Previous</button>
-                    </div>
+                        <div class="d-flex justify-content-left align-items-center flex-wrap amount__">
+                            <p class="mt-2">Amount paid to be deducted from invoice</p>
+                            <input style="width: 230px;" value="{{@$salon->amount_paid}}" type="text" name="amount_paid"
+                                   id="name" placeholder="**">
+                        </div>
+                        <div class="b_t_n_s d-flex flex-column">
+                            <div class="button bt_n4 my-2">Next</div>
+                            <button class="button border-0 mb-2">save</button>
+                            <button class="button_preve">Previous</button>
+                        </div>
                     </form>
                 </fieldset>
 
@@ -927,10 +954,13 @@
                     <h3>incase of cancelation the customer will receive full refund</h3>
                     <div class="butu">
                         <button
-                            style="background-color:#5F5AFF ;padding: 10px; border-radius: 10px;margin: 0 8px; border: none;color: white;">Yes</button>
+                            style="background-color:#5F5AFF ;padding: 10px; border-radius: 10px;margin: 0 8px; border: none;color: white;">
+                            Yes
+                        </button>
                         <button
                             style="background-color:#fd0bb4 ;padding: 10px; border-radius: 10px;margin: 0 8px; border: none;color: white;"
-                            class="no_">no</button>
+                            class="no_">no
+                        </button>
                     </div>
                     <div class="" id="show_show">
                         <p class="mr-4 mt-2"></p>
@@ -950,9 +980,13 @@
                     <h5 style="font-size: 15px;">do you want to add another branch?</h5>
                     <div class="butu">
                         <button class="button bt_n4"
-                                style="background-color:#5F5AFF !important;padding: 10px; border-radius: 10px;margin: 0 8px; border: none;color: white;">Yes</button>
+                                style="background-color:#5F5AFF !important;padding: 10px; border-radius: 10px;margin: 0 8px; border: none;color: white;">
+                            Yes
+                        </button>
                         <button class="btn_noo"
-                                style="background-color:#fd0bb4 ;padding: 10px; border-radius: 10px;margin: 0 8px; border: none;color: white;">no</button>
+                                style="background-color:#fd0bb4 ;padding: 10px; border-radius: 10px;margin: 0 8px; border: none;color: white;">
+                            no
+                        </button>
                     </div>
                     <div class="b_t_n_s d-flex flex-column">
                         <div class="button bt_n4 my-2 " id="hide_hide">Submit</div>
@@ -969,7 +1003,8 @@
 @section('js')
 
     <script type="text/javascript" src="{{ asset('dist/image-uploader.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('dist/image-uploader_2.min.js') }}"></script>    <script>
+    <script type="text/javascript" src="{{ asset('dist/image-uploader_2.min.js') }}"></script>
+    <script>
         $('.input-images').imageUploader({
             // preloaded: preloaded,
             imagesInputName: 'images[]',
@@ -1035,6 +1070,7 @@
 
                 return direction;
             }
+
             // location.reload();
 
             $('label').click(function () {

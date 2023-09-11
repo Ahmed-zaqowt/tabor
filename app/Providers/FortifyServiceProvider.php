@@ -27,47 +27,47 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         $request=request();
-        if($request->is('user/*')){
+        if($request->is('users/*')){
             Config::set('fortify.guard','user');
             Config::set('fortify.passwords','users');
-            Config::set('fortify.prefix','user');
+            Config::set('fortify.prefix','users');
             Config::set('fortify.username','phone');
             Config::set('fortify.email','phone');
-        }elseif ($request->is('admin/*')){
+        }elseif ($request->is('admins/*')){
             Config::set('fortify.guard','admin');
             Config::set('fortify.passwords','admins');
-            Config::set('fortify.prefix','admin');
+            Config::set('fortify.prefix','admins');
             Config::set('fortify.username','phone');
             Config::set('fortify.email','phone');
         }
-        elseif ($request->is('employee/*')){
+        elseif ($request->is('employees/*')){
             Config::set('fortify.guard','employee');
             Config::set('fortify.passwords','employees');
-            Config::set('fortify.prefix','employee');
+            Config::set('fortify.prefix','employees');
             Config::set('fortify.username','phone');
             Config::set('fortify.email','phone');
         }
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
             public function toResponse($request)
             {
-                if($request->is('user/*')){
+                if($request->is('users/*')){
                     return redirect()->intended('user/profile');
-                }elseif ($request->is('admin/*')) {
-                    return redirect()->intended('admin/profile');
-                }elseif ($request->is('employee/*')) {
-                    return redirect()->intended('employees/profile');
+                }elseif ($request->is('admins/*')) {
+                    return redirect()->intended('admins/orders');
+                }elseif ($request->is('employees/*')) {
+                    return redirect()->intended('employees/steps');
                 }
             }
         });
         $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
             public function toResponse($request)
             {
-                if(!$request->is('user/*')){
+                if(!$request->is('users/*')){
                     return redirect()->intended('/user/auth');
 
-                }elseif ($request->is('admin/*')) {
+                }elseif ($request->is('admins/*')) {
                     return redirect()->intended('/admin/auth');
-                }elseif ($request->is('admin/*')) {
+                }elseif ($request->is('employees/*')) {
                     return redirect()->intended('/employee/auth');
                 }
             }
