@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>saloons</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/hover-min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ asset('../css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('../css/all.css')}}">
+    <link rel="stylesheet" href="{{ asset('../css/animate.css')}}">
+    <link rel="stylesheet" href="{{ asset('../css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('../css/hover-min.css')}}">
+    <link rel="stylesheet" href="{{ asset('../css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('../css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('../css/swiper-bundle.min.css')}}">
+    <link href="{{asset('admin_assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('dashboard/app-assets/vendors/css/extensions/toastr.min.css') }}">
     <style>
         header {
             border: none;
@@ -201,7 +204,7 @@
 
 <body>
     <div class="loading">
-        <img class="wow hinge" src="../images/Group 43398.png" alt="">
+        <img class="wow hinge" src="{{ asset('../images/Group 43398.png')}}" alt="">
     </div>
     <main class="d-flex justify-content-between">
         <!-- popups -->
@@ -370,7 +373,7 @@
                     <button class="c2"><i class="fas fa-times text-dark"></i></button>
                 </div>
                 <div class="img_pop mb-4">
-                    <img src="../images/cmcm.png" alt="">
+                    <img src="{{ asset('../images/cmcm.png')}}" alt="">
                 </div>
                 <form action="" method="post">
                     <p>Enter Your Phone Number</p>
@@ -394,7 +397,7 @@
             </button>
             <div class="menu_pop d-flex justify-content-between align-items-center">
                 <a href="" class="user my-4 d-flex justify-content-left align-items-center">
-                    <img src="../images/NoPath - Copy (16).png" alt="">
+                    <img src="{{ asset('../images/NoPath - Copy (16).png')}}" alt="">
                     <div class="para ml-2">
                         <p>Account</p>
                     </div>
@@ -406,7 +409,7 @@
                     </div>
                 </a>
                 <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                    <img src="../images/mor.png" alt="">
+                    <img src="{{ asset('../images/mor.png')}}" alt="">
                     <div class="para ml-2">
                         <p>Operations</p>
                     </div>
@@ -436,13 +439,13 @@
             <aside class="bg-white text-center col-lg-12 p-3">
                 <div class="logo mr-5 mb-5">
                     <a href="">
-                        <img id="logo" src="../images/1234567.png" alt="">
+                        <img id="logo" src="{{ asset('../images/1234567.png')}}" alt="">
                     </a>
                 </div>
                  <div class="content-sidepar text-left px-2">
                     <p class="mb-4 ml-3">Admin tools</p>
                     <a href="" class="user my-4 d-flex justify-content-left align-items-center">
-                        <img src="../images/NoPath - Copy (16).png" alt="">
+                        <img src="{{ asset('../images/NoPath - Copy (16).png')}}" alt="">
                         <div class="para ml-2">
                             <p>Account</p>
                         </div>
@@ -454,7 +457,7 @@
                         </div>
                     </a>
                     <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                        <img src="../images/mor.png" alt="">
+                        <img src="{{ asset('../images/mor.png')}}" alt="">
                         <div class="para ml-2">
                             <p>Operations</p>
                         </div>
@@ -495,7 +498,7 @@
                     </div>
                     <div class="col-lg-6 d-flex justify-content-end">
                         <div class="user d-flex justify-content-left align-items-center">
-                            <img src="../images/NoPath - Copy (16).png" alt="">
+                            <img src="{{ asset('../images/NoPath - Copy (16).png')}}" alt="">
                             <div class="para ml-2">
                                 <p>Ahmed Bassam</p>
                                 <p class="text-secondary">Web Dev</p>
@@ -509,66 +512,18 @@
                     <h3 class="ml-5">Lorem</h3>
                     <div class="statistic_parent col-lg-12 d-flex justify-content-between">
                         <div class="table_ col-lg-9">
-                            <table class="w-100 bg-white" style="box-shadow: 0 0 10px rgb(231, 231, 231);">
+                            <table id="datatable_user" class="w-100 bg-white" style="box-shadow: 0 0 10px rgb(231, 231, 231);">
+                                <thead>
                                 <tr class="">
-                                    <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                                class="fas fa-sort-amount-down-alt"></i></button>Name</th>
-                                    <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                                class="fas fa-sort-amount-down-alt"></i></button>Phone</th>
-                                    <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                                class="fas fa-sort-amount-down-alt"></i></button>Email</th>
-                                    <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                                class="fas fa-sort-amount-down-alt"></i></button>Queuing</th>
-                                    <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                                class="fas fa-sort-amount-down-alt"></i></button>cancel
-                                    </th>
-                                    <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                                class="fas fa-sort-amount-down-alt"></i></button>Details</th>
+                                    <th style="font-size: 14px;">Name</th>
+                                    <th style="font-size: 14px;">Phone</th>
+                                    <th style="font-size: 14px;">Email</th>
+                                    <th style="font-size: 14px;">Category</th>
+                                    <th style="font-size: 14px;">CR Number</th>
+                                    <th style="font-size: 14px;">Country</th>
+                                    <th style="font-size: 14px;">City</th>
                                 </tr>
-                                <tr class="my-3">
-                                    <td>0595063676</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td><button class="btn btn-outline-primary" id="det">Details</button></td>
-                                </tr>
-                                <tr class="my-3">
-                                    <td>0595063676</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td><button class="btn btn-outline-primary" id="det">Details</button></td>
-
-                                </tr>
-                                <tr class="my-3">
-                                    <td>0595063676</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td><button class="btn btn-outline-primary" id="det">Details</button></td>
-
-                                </tr>
-                                <tr class="my-3">
-                                    <td>0595063676</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td><button class="btn btn-outline-primary" id="det">Details</button></td>
-
-                                </tr>
-                                <tr class="my-3">
-                                    <td>0595063676</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td>Ahmed Ramin</td>
-                                    <td><button class="btn btn-outline-primary" id="det">Details</button></td>
-
-                                </tr>
+                                </thead>
 
                             </table>
                         </div>
@@ -576,111 +531,113 @@
                             <div class="stc mb-4 bg-white d-flex justify-content-between align-items-center p-4 w-100"
                                 style="box-shadow: 0 0 10px rgb(231, 231, 231);border-left: 5px solid #5F5AFF;">
                                 <p class="m-0">Today's sums</p>
-                                <p class="m-0">22</p>
+                                <p class="m-0">{{ $today }}</p>
                             </div>
                             <div class="stc mb-4 bg-white d-flex justify-content-between align-items-center p-4 w-100"
                                 style="box-shadow: 0 0 10px rgb(231, 231, 231);border-left: 5px solid #fd0bb4;">
                                 <p class="m-0">Week</p>
-                                <p class="m-0">2</p>
+                                <p class="m-0">{{ $lastWeek }}</p>
                             </div>
                             <div class="stc mb-4 bg-white d-flex justify-content-between align-items-center p-4 w-100"
                                 style="box-shadow: 0 0 10px rgb(231, 231, 231);border-left: 5px solid #5F5AFF;">
                                 <p class="m-0">Month</p>
-                                <p class="m-0">12</p>
+                                <p class="m-0">{{ $lastMonth }}</p>
                             </div>
                             <div class="stc mb-4 bg-white d-flex justify-content-between align-items-center p-4 w-100"
                                 style="box-shadow: 0 0 10px rgb(231, 231, 231);border-left: 5px solid #fd0bb4;">
                                 <p class="m-0">Quarter</p>
-                                <p class="m-0">4</p>
+                                <p class="m-0">{{ $lastQuarter }}</p>
                             </div>
                             <div class="stc mb-4 bg-white d-flex justify-content-between align-items-center p-4 w-100"
                                 style="box-shadow: 0 0 10px rgb(231, 231, 231);border-left: 5px solid #5F5AFF;">
                                 <p class="m-0">Year</p>
-                                <p class="m-0">2012</p>
+                                <p class="m-0">{{ $lastYear }}</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12 table__ mx-3 my-5 change_">
-                        <h3>Lorem</h3>
-                        <div class="table_">
-                        <table class="w-100 bg-white" style="box-shadow: 0 0 10px rgb(231, 231, 231);">
-                            <tr class="">
-                                <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                            class="fas fa-sort-amount-down-alt"></i></button>Date</th>
-                                <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                            class="fas fa-sort-amount-down-alt"></i></button>Time</th>
-                                <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                            class="fas fa-sort-amount-down-alt"></i></button>section</th>
-                                <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                            class="fas fa-sort-amount-down-alt"></i></button>S-P Name
-                                </th>
-                                <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                            class="fas fa-sort-amount-down-alt"></i></button>Rate</th>
-                                <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                            class="fas fa-sort-amount-down-alt"></i></button>Pay</th>
-                                <th style="font-size: 14px;"><button style="background: transparent;border: none;"><i
-                                            class="fas fa-sort-amount-down-alt"></i></button>Status</th>
-                            </tr>
-                            <tr class="my-3">
-                                <td>12</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                            </tr>
-                            <tr class="my-3">
-                                <td>12</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                            </tr>
-                            <tr class="my-3">
-                                <td>12</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                            </tr>
-                            <tr class="my-3">
-                                <td>12</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                            </tr>
-                            <tr class="my-3">
-                                <td>12</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                                <td>Lorem, ipsum.</td>
-                            </tr>
-
-                        </table>
-                    </div>
                     </div>
                 </div>
             </div>
 
     </main>
 
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/swiper-bundle.min.js"></script>
-    <script src="../js/wow.min.js"></script>
-    <script src="../js/script.js"></script>
-
+    <script src="{{ asset('../js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{ asset('../js/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset('../js/wow.min.js')}}"></script>
+    <script src="{{ asset('../js/script.js')}}"></script>
+    <script src="{{asset('admin_assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('admin_assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{asset('admin_assets/js/table-datatable.js')}}"></script>
+    <script src="{{ asset('dashboard/app-assets/vendors/js/extensions/toastr.min.js') }}"></script>
     <script>
+
+        /*                         <th style="font-size: 14px;">Name</th>
+                                    <th style="font-size: 14px;">Phone</th>
+                                    <th style="font-size: 14px;">Email</th>
+                                    <th style="font-size: 14px;">Category</th>
+                                    <th style="font-size: 14px;">CR Number</th>
+                                    <th style="font-size: 14px;">Country</th>
+                                    <th style="font-size: 14px;">City</th> */
+        var table = $('#datatable_user').DataTable({
+            processing: true,
+            serverSide: true,
+            responsive: true,
+            searching: false,
+            paging: false,
+            info: false,
+            ajax: {
+                url:  '{{ route('report.provider.getdata') }}' ,
+            },
+            columns: [
+                {
+                    data: 'name',
+                    name: 'name',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'phone',
+                    name: 'phone',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'email',
+                    name: 'email',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'category',
+                    name: 'category',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'cr',
+                    name: 'cr_number',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'country',
+                    name: 'country',
+                    orderable: false,
+                    searchable: false
+                },
+                {
+                    data: 'city',
+                    name: 'city',
+                    orderable: false,
+                    searchable: false
+                },
+            ]
+
+        });
+
+
+
+
+
         $(document).ready(function () {
             $('.change_').fadeOut();
             var det = document.querySelectorAll('#det');

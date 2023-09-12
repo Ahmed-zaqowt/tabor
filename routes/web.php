@@ -63,24 +63,35 @@ Route::prefix('employees')->middleware('auth:employee')->group(function (){
 
 Route::prefix('admins')->middleware('auth:admin')->group(function (){
 
-    Route::prefix('orders')->name('order.')->group(function (){
-        Route::get('/',[\App\Http\Controllers\Admin\Order\OrderController::class,'index'])->name('index');
-        Route::get('/getdata',[\App\Http\Controllers\Admin\Order\OrderController::class,'getdata'])->name('getdata');
-        Route::post('/update_status',[\App\Http\Controllers\Admin\Order\OrderController::class,'update_status'])->name('update_status');
-    });
+          Route::prefix('orders')->name('order.')->group(function (){
+              Route::get('/',[\App\Http\Controllers\Admin\Order\OrderController::class,'index'])->name('index');
+              Route::get('/getdata',[\App\Http\Controllers\Admin\Order\OrderController::class,'getdata'])->name('getdata');
+              Route::post('/update_status',[\App\Http\Controllers\Admin\Order\OrderController::class,'update_status'])->name('update_status');
+          });
 
-    Route::prefix('steps')->name('admin.steps')->group(function (){
-        Route::get('/',[\App\Http\Controllers\Admin\Step\StepController::class,'index']);
-    });
+          Route::prefix('steps')->name('admin.steps')->group(function (){      Route::get('/',[\App\Http\Controllers\Admin\Step\StepController::class,'index']);
+          });
 
-    Route::prefix('providers')->name('provider.')->group(function (){
-        Route::get('/',[\App\Http\Controllers\Admin\Provider\ProviderController::class,'index'])->name('index');
-        Route::get('/getdata',[\App\Http\Controllers\Admin\Provider\ProviderController::class,'getdata'])->name('getdata');
-        Route::get('/steps',[\App\Http\Controllers\Admin\Step\StepController::class,'index'])->name('steps');
-        Route::post('/store',[\App\Http\Controllers\Admin\Step\StepController::class,'salon'])->name('store.salon');
-        Route::post('/details/store',[\App\Http\Controllers\Admin\Step\StepController::class,'details'])->name('store.details');
+          Route::prefix('providers')->name('provider.')->group(function (){
+              Route::get('/',[\App\Http\Controllers\Admin\Provider\ProviderController::class,'index'])->name('index');
+              Route::get('/getdata',[\App\Http\Controllers\Admin\Provider\ProviderController::class,'getdata'])->name('getdata');
+              Route::get('/steps',[\App\Http\Controllers\Admin\Step\StepController::class,'index'])->name('steps');
+              Route::post('/store',[\App\Http\Controllers\Admin\Step\StepController::class,'salon'])->name('store.salon');
+              Route::post('/details/store',[\App\Http\Controllers\Admin\Step\StepController::class,'details'])->name('store.details');
+          });
 
-    });
+          Route::prefix('reports')->name('report.')->group(function (){
+
+              Route::prefix('users')->name('user.')->controller(\App\Http\Controllers\Admin\Report\User\UserController::class)->group(function (){
+                  Route::get('/' , 'index')->name('index');
+                  Route::get('/getdata' , 'getdata')->name('getdata');
+              });
+
+              Route::prefix('providers')->name('provider.')->controller(\App\Http\Controllers\Admin\Report\Provider\ProviderController::class)->group(function (){
+                  Route::get('/' , 'index')->name('index');
+                  Route::get('/getdata' , 'getdata')->name('getdata');
+              });
+          });
 });
 
 

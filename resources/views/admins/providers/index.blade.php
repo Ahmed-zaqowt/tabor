@@ -607,7 +607,7 @@
 
         <div class="container">
             <div>
-                <a href="{{route('provider.steps')}}" class="btn btn-block">@lang('add')</a>
+                <a href="{{route('provider.steps')}}" class="btn btn-success mt-5">@lang('add')</a>
             </div>
             <div class="tabels_content py-5">
                 <div class="tabels__ my-5">
