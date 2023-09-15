@@ -1,4 +1,4 @@
-@extends('providers.master')
+@extends('admins.master')
 @section('style')
 
     <style>
@@ -738,7 +738,7 @@
                     e.preventDefault();
                 });
 
-                if (currentSectionIndex === 9) {
+                if (currentSectionIndex === 3) {
                     $(document).find(".form-wrapper .section").first().addClass("is-active");
                     $(document).find(".steps li").first().addClass("is-active");
                 }
@@ -759,7 +759,7 @@
                     e.preventDefault();
                 });
 
-                if (currentSectionIndex === 8) {
+                if (currentSectionIndex === 3) {
                     $(document).find(".form-wrapper .section").first().addClass("is-active");
                     $(document).find(".steps li").first().addClass("is-active");
                 }

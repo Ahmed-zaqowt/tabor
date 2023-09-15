@@ -69,7 +69,8 @@ Route::prefix('admins')->middleware('auth:admin')->group(function (){
               Route::post('/update_status',[\App\Http\Controllers\Admin\Order\OrderController::class,'update_status'])->name('update_status');
           });
 
-          Route::prefix('steps')->name('admin.steps')->group(function (){      Route::get('/',[\App\Http\Controllers\Admin\Step\StepController::class,'index']);
+          Route::prefix('steps')->name('admin.steps')->group(function (){
+              Route::get('/',[\App\Http\Controllers\Admin\Step\StepController::class,'index']);
           });
 
           Route::prefix('providers')->name('provider.')->group(function (){
@@ -92,6 +93,13 @@ Route::prefix('admins')->middleware('auth:admin')->group(function (){
                   Route::get('/getdata' , 'getdata')->name('getdata');
               });
           });
+
+
+    Route::prefix('admins')->name('admin.')->controller(\App\Http\Controllers\Admin\Admin\AdminController::class)->group(function (){
+        Route::get('/','index')->name('index');
+        Route::get('/getdata','getdata')->name('getdata');
+        Route::post('/store','store')->name('store');
+    });
 });
 
 

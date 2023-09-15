@@ -487,24 +487,9 @@
             <header class="bg-white head col-lg-12">
                 <div class="container d-flex justify-content-between align-items-center">
                     <div class="col-lg-6 d-flex justify-content-start align-items-center">
-                        <h2 class="mr-5">Operation</h2>
-                        <div class="switch_ ml-5">
-                            <span>open</span>
-                            <div class="sw">
-                                <input type="checkbox" hidden="hidden" id="username">
-                                <label class="switch" for="username"></label>
-                            </div>
-                        </div>
+                        <h2 class="mr-5">Provider Reports</h2>
                     </div>
-                    <div class="col-lg-6 d-flex justify-content-end">
-                        <div class="user d-flex justify-content-left align-items-center">
-                            <img src="{{ asset('../images/NoPath - Copy (16).png')}}" alt="">
-                            <div class="para ml-2">
-                                <p>Ahmed Bassam</p>
-                                <p class="text-secondary">Web Dev</p>
-                            </div>
-                        </div>
-                    </div>
+                @include('admins.parts.header')
             </header>
 
             <div class="container">

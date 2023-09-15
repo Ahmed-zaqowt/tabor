@@ -1100,7 +1100,7 @@
                     e.preventDefault();
                 });
 
-                if (currentSectionIndex === 9) {
+                if (currentSectionIndex === 10) {
                     $(document).find(".form-wrapper .section").first().addClass("is-active");
                     $(document).find(".steps li").first().addClass("is-active");
                 }

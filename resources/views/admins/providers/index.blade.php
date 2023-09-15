@@ -548,42 +548,7 @@
             </div>
             <div class="content-sidepar text-left px-2">
                 <p class="mb-4 ml-3">Admin tools</p>
-                <a href="" class="user my-4 d-flex justify-content-left align-items-center">
-                    <img src="{{ asset('../images/NoPath - Copy (16).png') }} " alt="">
-                    <div class="para ml-2">
-                        <p>Account</p>
-                    </div>
-                </a>
-                <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                    <i class="fas fa-home"></i>
-                    <div class="para ml-2">
-                        <p>Home</p>
-                    </div>
-                </a>
-                <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                    <img src="{{ asset('../images/mor.png') }} " alt="">
-                    <div class="para ml-2">
-                        <p>Operations</p>
-                    </div>
-                </a>
-                <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                    <i class="fas fa-sliders-h"></i>
-                    <div class="para ml-2">
-                        <p>Setup</p>
-                    </div>
-                </a>
-                <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                    <i class="fas fa-file-alt"></i>
-                    <div class="para ml-2">
-                        <p>Reports</p>
-                    </div>
-                </a>
-                <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                    <i class="fas fa-user-plus"></i>
-                    <div class="para ml-2">
-                        <p>Create New User</p>
-                    </div>
-                </a>
+                @include('admins.parts.side')
             </div>
         </aside>
     </div>
@@ -593,15 +558,7 @@
                 <div class="col-lg-6 d-flex justify-content-start align-items-center">
                     <h2 class="mr-5">Orders</h2>
                 </div>
-                <div class="col-lg-6 d-flex justify-content-end">
-                    <div class="user d-flex justify-content-left align-items-center">
-                        <img src="{{ asset('../images/NoPath - Copy (16).png') }} " alt="">
-                        <div class="para ml-2">
-                            <p>Ahmed Bassam</p>
-                            <p class="text-secondary">Web Dev</p>
-                        </div>
-                    </div>
-                </div>
+                @include('admins.parts.header')
             </div>
         </header>
 

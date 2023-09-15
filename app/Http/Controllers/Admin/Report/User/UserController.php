@@ -35,7 +35,9 @@ class UserController extends Controller
             ->addIndexColumn()
             ->addColumn('details', function ($qur) {
                 $string='';
-                $string .= '<button class="btn btn-outline-primary" id="det">Details</button>';
+
+
+                $string .= '<button class="btn btn-outline-info ahmed" id="det">Details</button>';
                 return $string;
             })
             ->addColumn('queuing', function ($qur) {

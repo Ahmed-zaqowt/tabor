@@ -444,70 +444,25 @@
                 </div>
                  <div class="content-sidepar text-left px-2">
                     <p class="mb-4 ml-3">Admin tools</p>
-                    <a href="" class="user my-4 d-flex justify-content-left align-items-center">
-                        <img src="{{ asset('../images/NoPath - Copy (16).png')}}" alt="">
-                        <div class="para ml-2">
-                            <p>Account</p>
-                        </div>
-                    </a>
-                    <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                        <i class="fas fa-home"></i>
-                        <div class="para ml-2">
-                            <p>Home</p>
-                        </div>
-                    </a>
-                    <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                        <img src="{{ asset('../images/mor.png')}}" alt="">
-                        <div class="para ml-2">
-                            <p>Operations</p>
-                        </div>
-                    </a>
-                    <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                        <i class="fas fa-sliders-h"></i>
-                        <div class="para ml-2">
-                            <p>Setup</p>
-                        </div>
-                    </a>
-                    <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                        <i class="fas fa-file-alt"></i>
-                        <div class="para ml-2">
-                            <p>Reports</p>
-                        </div>
-                    </a>
-                    <a href="" class="my-4 customer d-flex justify-content-left align-items-center">
-                        <i class="fas fa-user-plus"></i>
-                        <div class="para ml-2">
-                            <p>Create New User</p>
-                        </div>
-                    </a>
-                </div>
+                     @include('admins.parts.side')
+                 </div>
             </aside>
         </div>
         <div class="col-lg-10 main-content p-0 main_">
             <header class="bg-white head col-lg-12">
                 <div class="container d-flex justify-content-between align-items-center">
                     <div class="col-lg-6 d-flex justify-content-start align-items-center">
-                        <h2 class="mr-5">Operation</h2>
-                        <div class="switch_ ml-5">
-                            <span>open</span>
-                            <div class="sw">
-                                <input type="checkbox" hidden="hidden" id="username">
-                                <label class="switch" for="username"></label>
-                            </div>
-                        </div>
+                        <h2 class="mr-5">User Reports</h2>
                     </div>
-                    <div class="col-lg-6 d-flex justify-content-end">
-                        <div class="user d-flex justify-content-left align-items-center">
-                            <img src="{{ asset('../images/NoPath - Copy (16).png')}}" alt="">
-                            <div class="para ml-2">
-                                <p>Ahmed Bassam</p>
-                                <p class="text-secondary">Web Dev</p>
-                            </div>
-                        </div>
-                    </div>
+                @include('admins.parts.header')
+
             </header>
 
+
             <div class="container">
+
+
+
                 <div class="content-body pt-5 px-3">
                     <h3 class="ml-5">Lorem</h3>
                     <div class="statistic_parent col-lg-12 d-flex justify-content-between">
@@ -523,8 +478,6 @@
                                     <th style="font-size: 14px;">Details</th>
                                 </tr>
                                 </thead>
-
-
 
                             </table>
                         </div>
@@ -689,11 +642,14 @@
                     searchable: false
                 },
             ]
-
         });
 
 
-
+        $(document).ready(function () {
+          $(document).on('click', '.ahmed', function(event) {
+              alert("ahmed zaqowt ./. ") ;
+           });
+        });
 
 
         $(document).ready(function () {
