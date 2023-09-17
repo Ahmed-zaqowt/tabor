@@ -7,13 +7,18 @@ use App\Models\Aboutus;
 use App\Models\Admin;
 use App\Models\Salon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\Facades\DataTables;
 
 class AdminController extends Controller
 {
     function index(){
-       return view('admins.admin.index');
+        if (Auth::user()->role==1){
+            return view('admins.admin.index');
+        };
+        abort(403);
+
     }
 
     function getdata(){
@@ -29,6 +34,7 @@ class AdminController extends Controller
                 $data_attr .= 'data-name="' . $qur->name . '"';
                 $data_attr .= 'data-phone="' . $qur->phone . '"';
                 $data_attr .= 'data-email="' . $qur->email . '"';
+                $data_attr .= 'data-role="' . $qur->role . '"';
 
                 $string='';
 
@@ -42,7 +48,18 @@ class AdminController extends Controller
                 return $string;
             })
             ->addColumn('role', function ($qur) {
-                 return 'admin' ;
+                if ($qur->role==1){
+                    return __('super');
+                }elseif ($qur->role==2){
+                    return __('super without finances');
+                }elseif ($qur->role==3){
+                    return __('super without finances and reports');
+                }elseif ($qur->role==4){
+                    return __('only add provider');
+                }
+
+
+
             })
             ->rawColumns(['action','status' , 'reset' , 'role'])
             ->make(true);
@@ -54,6 +71,8 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required|string|min:3|max:20' ,
             'phone' => 'required' ,
+            'role' => 'required|in:1,2,3,4' ,
+
             'email' => 'required|email' ,
         ]);
 
@@ -68,6 +87,7 @@ class AdminController extends Controller
             'name' => $request->name ,
             'phone' => $request->phone ,
             'email' => $request->email ,
+            'role'=>$request->role,
             'password' => Hash::make('123456789') ,
          ]);
 

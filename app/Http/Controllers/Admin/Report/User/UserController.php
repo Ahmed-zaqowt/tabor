@@ -7,6 +7,7 @@ use App\Models\Line;
 use App\Models\Salon;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 use Carbon\Carbon;
 
@@ -15,6 +16,9 @@ class UserController extends Controller
 {
     function index()
     {
+        if (Auth::user()->role!=1&&Auth::user()->role!=2){
+            abort(403);
+        };
         $now = Carbon::now();
         $threeMonthsAgo = $now->subMonths(3);
         $oneYearAgo = $now->subYear();

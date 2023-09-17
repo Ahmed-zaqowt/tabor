@@ -6,11 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Line;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 
 class OrderController extends Controller
 {
     function index(){
+        if (Auth::user()->role==4){
+            abort(403);
+        };
          return view('admins.order.index');
     }
 

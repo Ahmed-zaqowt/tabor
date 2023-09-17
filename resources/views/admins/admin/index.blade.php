@@ -355,11 +355,11 @@
                             <div class="invalid-feedback"></div>
                             <input type="text" name="email"  id="email" placeholder="Email">
                             <div class="invalid-feedback"></div>
-                            <select id="msms">
-                                <option>user</option>
-                                <option>user</option>
-                                <option>user</option>
-                                <option>user</option>
+                            <select id="msms" name="role">
+                                <option value="1">@lang('super')</option>
+                                <option value="2">@lang('super without finances')</option>
+                                <option value="3">@lang('super without finances and reports')</option>
+                                <option value="4">@lang('only add provider')</option>
                             </select>
                             <div class="invalid-feedback"></div>
                             <div class="b_t_n_s d-flex flex-column">
@@ -551,6 +551,8 @@
             var id = button.data('id')
             $('#id').val(id);
             $('#name').val(button.data('name'))
+            $('#msms').val(button.data('role')).trigger('change')
+
             $('#phone').val(button.data('phone'))
             $('#email').val(button.data('email'))
             $('html, body').animate({ scrollTop: 0 }, 'slow');
